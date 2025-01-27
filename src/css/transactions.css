@@ -1,0 +1,94 @@
+.transactions {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.transactions {
+  width: 900px;
+}
+
+.transactions td:first-child, .transactions td:nth-child(2) { width: 100px; }
+
+.transactions td:nth-child(3), .transactions td:nth-child(5) { width: 120px; }
+
+.transactions td:nth-child(4) { width: 250px; }
+
+.transaction-header {
+  border-top: 1px solid #a6a6a6;
+  border-bottom: 1px solid #a6a6a6;
+  display: flex;
+  font-weight: 700;
+}
+
+.transaction-row {
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.transaction-row:last-of-type {
+  border-bottom: 1px solid #a6a6a6;
+}
+
+.transaction-row a {
+  background-color: #646cff;
+  border: 1px solid #646cff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.2em 0.5em;
+}
+
+.transaction-row a:focus, .transaction-row a:hover {
+  background-color: transparent;
+  border: 1px solid #646cff;
+  color: #646cff
+}
+
+.transaction-row button {
+  margin-left: 10px;
+  padding: 0.2em 0.5em;
+}
+
+.transaction-row button:focus, .transaction-row button:hover {
+  border: 1px solid orangered
+}
+
+.row-one div:first-child {
+  width: 110px;
+}
+.row-one div:first-child, .row-two div:first-child {
+  margin-bottom: 1rem;
+}
+
+.row-two div:first-child {
+  width: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .row-one, .row-two {
+    display: flex;
+  }
+
+  .row-one {
+    width: 55%;
+  }
+
+  .row-two {
+    width: 45%;
+  }
+
+  .transaction-header .row-one div, .transaction-header .row-two div {
+    padding-right: 15px;
+  }
+
+  .row-one div, .row-two div {
+    padding-right: 15px;
+  }
+
+  .row-one div:first-child, .row-two div:first-child {
+    margin-bottom: 0;
+  }  
+}

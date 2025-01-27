@@ -1,0 +1,108 @@
+.form-container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+form {
+  background-color: #f7f7f7;
+  margin: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+fieldset {
+  border: none;
+  text-align: left;
+  display: flex;
+}
+
+fieldset:first-child {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+/* input[type=number], input[type=text], input[type=date], select, textarea {
+  border: 1px solid #9a75ff;
+  padding: 5px;
+} */
+
+.toggle-container  {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  border: 3px solid #9a75ff;
+  border-radius: 20px;
+  background: #9a75ff;
+  font-weight: bold;
+  color: #9a75ff;
+  cursor: pointer;
+}
+
+.toggle-container::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius:20px;
+  background: white;
+  transition: all 0.3s;
+}
+.toggle-checkbox:checked + .toggle-container::before {
+   left: 50%;
+}
+.toggle-container span {
+  padding: 6px;
+  text-align: center;
+  z-index: 1;
+}
+.toggle-checkbox {
+  display: none;
+}
+.toggle-checkbox:checked + .toggle-container span:first-child{
+  color: #9a75ff;
+  transition: color 0.3s;
+}
+.toggle-checkbox:checked + .toggle-container span:last-child{
+  color: #9a75ff;
+  transition: color 0.3s;
+}
+.toggle-checkbox + .toggle-container span:first-child{
+  color: #9a75ff;
+  transition: color 0.3s;
+}
+.toggle-checkbox + .toggle-container span:last-child{
+  color: #9a75ff;
+  transition: color 0.3s;
+}
+
+form label { width: 90px; }
+
+form input, form textarea {
+  width: 180px;
+}
+ 
+form select {
+  width: 202px;
+}
+
+form select, form textarea {
+  border: 1px solid #646cff;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+button[type=submit] {
+  background-color: #9a75ff;
+  color: #fff;
+  margin-left: 240px; 
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.add-transaction {
+  display: flex;
+  justify-content: flex-end;
+}

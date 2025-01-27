@@ -1,0 +1,43 @@
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 500px;
+}
+
+td {
+  text-align: left;
+}
+
+td:first-child {
+  width: 100px;
+}
+
+td:nth-child(2) {
+  padding-left: 20px;
+  width: 250px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.button a {
+  background-color: #646cff;
+  border: 1px solid #646cff;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 10px;
+}
+
+.button a:hover, .button a:focus {
+  background-color: white;
+  color: #646cff;
+}
+
+.transaction-row > div {
+  text-align: left;
+}
