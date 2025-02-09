@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaSignInAlt } from 'react-icons/fa'
+// import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux';
 import { login, reset } from '../features/auth/authSlice';
 import Spinner from '../components/Spinner';
@@ -54,7 +54,7 @@ const Login = () => {
   return (
     <>
       <section className="heading">
-        <h1><FaSignInAlt/> Login</h1>
+        <h1> Login</h1>
         <p>Login or <Link to="/register">Register</Link> to use the features of Scrooge.</p>
       </section>
 
