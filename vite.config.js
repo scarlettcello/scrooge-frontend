@@ -10,5 +10,11 @@ export default defineConfig({
   build: {
     outDir: '/dist',
     emptyOutDir: true, 
+    rollupOptions: {
+      external: [
+        "react-icons",
+        "react-datepicker"
+      ]
+    }
   }
 })
