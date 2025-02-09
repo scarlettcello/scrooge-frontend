@@ -8,8 +8,7 @@ export default defineConfig({
     port: 3000
   },
   build: {
-    rollupOptions: {
-      external: [...allExternal]
-    }
+    outDir: '/dist',
+    emptyOutDir: true, 
   }
 })
