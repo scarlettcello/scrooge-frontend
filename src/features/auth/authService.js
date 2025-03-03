@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const url = process.env.NODE_ENV == 'production' ? 
-process.env.API_URL: 'http://localhost:5000';
+const url = import.meta.env.VITE_NODE_ENV == 'production' ? 
+import.meta.env.API_URL : 'http://localhost:5000';
 
 const register = async (userData) => {
   const response = await axios.post(`${url}/api/users`, userData);
