@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/transactions/'
+const url = process.env.NODE_ENV == 'production' ? 
+process.env.API_URL: 'http://localhost:5000';
 
 const addTransaction = async (transactionData, token) => {
   const config = {
@@ -9,7 +10,7 @@ const addTransaction = async (transactionData, token) => {
     }
   }
 
-  const response = await axios.post(API_URL, transactionData, config);
+  const response = await axios.post(`${url}/api/transactions/`, transactionData, config);
 
   return response.data;
 }
@@ -21,7 +22,7 @@ const getTransactions = async (token) => {
     }
   }
 
-  const response = await axios.get(API_URL, config);
+  const response = await axios.get(`${url}/api/transactions/`, config);
 
   return response.data;
 }
@@ -33,7 +34,7 @@ const getTransaction = async (transactionId, token) => {
     }
   }
 
-  const response = await axios.get(API_URL + transactionId, config);
+  const response = await axios.get(`${url}/api/transactions/` + transactionId, config);
 
   return response.data;
 }
@@ -45,7 +46,7 @@ const updateTransaction = async (transactionId, transactionData, token) => {
     }
   }
 
-  const response = await axios.put(API_URL + transactionId, transactionData, config);
+  const response = await axios.put(url + transactionId, transactionData, config);
 
   return response.data;
 }
@@ -57,7 +58,7 @@ const deleteTransaction = async (transactionId, token) => {
     }
   }
 
-  const response = await axios.delete(API_URL + transactionId, config);
+  const response = await axios.delete(url + transactionId, config);
 
   return response.data;
 }

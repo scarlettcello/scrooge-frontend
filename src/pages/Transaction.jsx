@@ -7,7 +7,7 @@ import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 
 const Transaction = () => {
-  const {  transaction, isLoading, isError, message} = useSelector((state) => state.transactions);
+  const { transaction, isLoading, isError, message } = useSelector((state) => state.transactions);
 
   const dispatch = useDispatch();
   const { transactionId } = useParams();

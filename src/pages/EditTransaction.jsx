@@ -16,7 +16,7 @@ const EditTransaction = () => {
   const { transactionId } = useParams();
 
   const [transactionType, setTransactionType] = useState(transaction.transactionType);
-  const [fate, setDate] = useState(transaction.date);
+  const [date, setDate] = useState(transaction.date);
   const [exCategory, setExCategory] = useState(transaction.exCategory);
   const [inCategory, setInCategory] = useState(transaction.inCategory);
   const [subject, setSubject] = useState(transaction.subject);

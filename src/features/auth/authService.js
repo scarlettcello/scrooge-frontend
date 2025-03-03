@@ -1,25 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/users';
-
-const getBaseUrl = () => {
-  let url;
-
-  switch(process.env.NODE_ENV) {
-    case 'production':
-      url = process.env.API_URL;
-      break;
-    case 'development':
-    default:
-      url = 'http://localhost:5000/api/users';
-  }
-
-  return url;
-}
+const url = process.env.NODE_ENV == 'production' ? 
+process.env.API_URL: 'http://localhost:5000';
 
 const register = async (userData) => {
-  const url = getBaseUrl();
-  const response = await axios.post(url, userData);
+  const response = await axios.post(`${url}/api/users`, userData);
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data));
@@ -29,7 +14,7 @@ const register = async (userData) => {
 }
 
 const login = async (userData) => {
-  const response = await axios.post(API_URL + '/login', userData);
+  const response = await axios.post(`${url}/api/users`+ '/login', userData);
 
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data));
@@ -40,6 +25,6 @@ const login = async (userData) => {
 
 const logout = () => localStorage.removeItem('user');
 
-const authService = { getBaseUrl, register, logout, login }
+const authService = { url, register, logout, login }
 
 export default authService;
